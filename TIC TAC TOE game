@@ -1,0 +1,144 @@
+nw, n, ne, w, m, e, sw, s, se = '-', '-', '-', '-', '-', '-', '-', '-', '-'
+global index
+global end
+# PLAYER & GAME
+end=0
+player_1_num = 1
+player_1_symbol = 'X'
+winner = None
+index=0
+
+while index%2==0 and end!=2:
+  index+=1
+  if (nw!='X'or m!='X' or se!='X') and (ne!='X'or m!='X' or sw!='X')and (n!='X'or m!='X' or s!='X') and (ne!='X'or e!='X' or se!='X')and (nw!='X'or w!='X' or sw!='X')and (nw!='X'or n!='X' or ne!='X')and (w!='X'or m!='X' or e!='X')and (sw!='X'or s!='X' or se!='X'):
+    user= int(input(f'Player {player_1_num}, enter the number representing the location to place your {player_1_symbol} (1-9): '))
+    if user==1 and nw=="-":
+      nw= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==2 and n=="-":
+      n= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==3 and ne=="-":
+      ne= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==4 and w=="-":
+      w= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==5 and m=="-":
+      m= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==6 and e=="-":
+      e= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==7 and sw=="-":
+      sw= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+
+    elif user==8 and s=="-":
+      s= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    elif user==9 and se=="-":
+      se= player_1_symbol
+      print('Here is the state of the board:')
+      print(f'{nw} {n} {ne}')
+      print(f'{w} {m} {e}')
+      print(f'{sw} {s} {se}')
+    else:
+      index-=1
+  if not((nw!='X'or m!='X' or se!='X') and (ne!='X'or m!='X' or sw!='X')and (n!='X'or m!='X' or s!='X') and (ne!='X'or e!='X' or se!='X')and (nw!='X'or w!='X' or sw!='X')and (nw!='X'or n!='X' or ne!='X')and (w!='X'or m!='X' or e!='X')and (sw!='X'or s!='X' or se!='X')):
+    end=1
+    print("Player 1 wins!")
+  if (nw!="-" and n!="-" and ne!="-" and s!="-" and se!="-" and sw!="-" and m!="-" and e!="-" and w!="-") and end==0:
+    print("Tied game!")
+    break
+
+  while index%2!=0 and end!=1:
+    index+=1
+    player_2_num = 2
+    player_2_symbol='O'
+    if(nw!='O'or m!='O' or se!='O') and (ne!='O'or m!='O' or sw!='O')and (n!='O'or m!='O' or s!='O')and (ne!='O'or e!='O' or se!='O')and (nw!='O'or w!='O' or sw!='O')and (nw!='O'or n!='O' or ne!='O')and (w!='O'or m!='O' or e!='O')and (sw!='O'or s!='O' or se!='O'):
+        user= int(input(f'Player {player_2_num}, enter the number representing the location to place your {player_2_symbol} (1-9): '))
+        if user==1 and nw=="-":
+           nw= player_2_symbol
+           print('Here is the state of the board:')
+           print(f'{nw} {n} {ne}')
+           print(f'{w} {m} {e}')
+           print(f'{sw} {s} {se}')
+        elif user==2 and n=="-":
+          n= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==3 and ne=="-":
+          ne= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==4 and w=="-":
+          w= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==5 and m=="-":
+          m= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==6 and e=="-":
+          e= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==7 and sw=="-":
+          sw= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==8 and s=="-":
+          s= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        elif user==9 and se=="-":
+          se= player_2_symbol
+          print('Here is the state of the board:')
+          print(f'{nw} {n} {ne}')
+          print(f'{w} {m} {e}')
+          print(f'{sw} {s} {se}')
+        else:
+          index-=1
+    if not((nw!='O'or m!='O' or se!='O') and (ne!='O'or m!='O' or sw!='O')and (n!='O'or m!='O' or s!='O')and (ne!='O'or e!='O' or se!='O')and (nw!='O'or w!='O' or sw!='O')and (nw!='O'or n!='O' or ne!='O')and (w!='O'or m!='O' or e!='O')and (sw!='O'or s!='O' or se!='O')):
+        end=2
+        print("Player 2 wins!")
+
